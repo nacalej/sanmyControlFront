@@ -87,7 +87,7 @@ const Home = () => {
                 <div className="mt-4">
                     <h4 className="heading text-center">
                     {cleanedValueEarningsByMonth && 
-                    cleanedValueEarningsByMonth === null ? 
+                    cleanedValueEarningsByMonth === null ||  !isNan(cleanedValueEarningsByMonth) ? 
                     'No hay datos.' : 
                     cleanedValueEarningsByMonth &&
                     cleanedValueEarningsByMonth ? 
