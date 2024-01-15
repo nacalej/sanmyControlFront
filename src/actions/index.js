@@ -23,7 +23,7 @@ import {
 import { URL_ADD_RENTAL_WIFI, URL_ADD_USER, URL_GET_ALL_RENTALS_WIFI, URL_GET_ALL_USERS, URL_GET_COUNT_RENTALS, URL_GET_EARNINGS, URL_GET_EARNINGS_BY_MONTH, URL_GET_EARNINGS_PER_MONTH, URL_GET_EARNINGS_WIFI_PER_DAY } from "../const/constants";
 
 // const URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
-const URL = process.env.REACT_APP_BACKEND_URL || 'sanmycontrol.alwaysdata.net';
+// const URL = process.env.REACT_APP_BACKEND_URL || 'sanmycontrol.alwaysdata.net';
 //Actions:
 
 export const getEarnings = () => {
