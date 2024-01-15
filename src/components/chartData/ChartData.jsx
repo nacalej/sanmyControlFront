@@ -13,7 +13,7 @@ ChartJS.register(
 );
 
 export default function ChartData() {
-  const URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+  const URL = process.env.REACT_APP_BACKEND_URL || 'sanmycontrol.alwaysdata.net';
 
     const [rentals, setRentals] = useState([]);
    
