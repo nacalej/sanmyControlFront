@@ -29,7 +29,7 @@ const Home = () => {
   const { earningsByMonth, 
     earningsWifiPerDay   } = useSelector((state) => state);
  console.log("Earnings by month: ", earningsByMonth);
- 
+ console.log("TYPE OF ---- Earnings by month: ", typeof(earningsByMonth));
  let cleanedValueEarningsByMonth = Number(earningsByMonth).toFixed(2);
 
 //   console.log("-- Status earnings: ", statusEarnings);
