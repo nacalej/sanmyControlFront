@@ -1,5 +1,5 @@
 // const baseUrl = "https://sanmycontrol.onrender.com";
-const baseUrl = "sanmy-control.vercel.app";
+const baseUrl = "sanmycontrol.alwaysdata.net";
 
 export const  URL_GET_ALL_USERS = `${baseUrl}/users`;
 
