@@ -120,7 +120,7 @@ const Home = () => {
         ) :
         ( <div className="fatherDiv">
           <div className="chilDiv">
-           <Spinner animation="border" variant="dark" className="spinnerReactstrap" /> 
+           <Spinner animation="border" variant="light" className="spinnerReactstrap" /> 
            
            </div>
            </div>
