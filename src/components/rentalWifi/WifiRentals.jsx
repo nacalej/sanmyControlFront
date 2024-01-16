@@ -15,6 +15,9 @@ import WifiRental from './WifiRental';
 import AddConnection from './AddConnection';
 // import Product from './Product';
 // import AddProducts from './AddProducts';
+import '../styles/spinner.css';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 const WifiRentals = () => {
     const dispatch = useDispatch();
@@ -89,10 +92,13 @@ const WifiRentals = () => {
           </div>              
             </div>
     
+            { allRentalWifi && allRentalWifi.length > 0 ? (
         <Alert show={showAlert} variant="success">
             ¡Lista de red actualizada!
         </Alert>
+            ) : (<div className='d-none'></div>)}
         <div className="row w-100" align="center">
+        { allRentalWifi && allRentalWifi.length > 0 ? ( 
           <div className="table-responsive " size="lg">
           {currentRentalsWifi && currentRentalsWifi?.length > 0 ? (
               <table className="table table-striped table-hover text-center table-bordered"
@@ -140,6 +146,15 @@ const WifiRentals = () => {
             " "
           )}
           </div>
+                    ) :
+                    ( <div className="fatherDiv">
+                      <div className="chilDiv">
+                       <Spinner animation="border" variant="success"  className="spinnerReactstrap" /> 
+                       
+                       </div>
+                       </div>
+                       )
+                    }
           </div>
     
         <Modal show={show} onHide={handleClose}>

@@ -137,7 +137,7 @@ const Users = () => {
     
             { allUsers && allUsers.length > 0 ? (
         <Alert show={showAlert} variant="success">
-            ¡Lista de red actualizada!
+            ¡Lista de usuarios actualizada!
         </Alert>
             ) : (<div className='d-none'></div>)}
         <div className="row w-100" align="center">
