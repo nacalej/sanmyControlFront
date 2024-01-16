@@ -1,4 +1,4 @@
-// const baseUrl = "https://sanmycontrol.onrender.com";
+// const baseUrl = "https://sanmycontrol.alwaysdata.net/users";
 const baseUrl = "https://sanmycontrol.alwaysdata.net";
 
 export const  URL_GET_ALL_USERS = `${baseUrl}/users`;
