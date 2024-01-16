@@ -18,8 +18,8 @@ export const URL_GET_EARNINGS_WIFI_PER_DAY = `${baseUrl}/earnings/wifiPerDay`;
 
 //BEGIN EARNINGS
 export const URL_GET_EARNINGS = `${baseUrl}/earnings`;
-export const URL_GET_EARNINGS_BY_MONTH =  `${baseUrl}earnings/month`;
+export const URL_GET_EARNINGS_BY_MONTH =  `${baseUrl}/earnings/month`;
 export const URL_GET_COUNT_RENTALS =  `${baseUrl}/chartData`;
-export const URL_GET_EARNINGS_PER_MONTH =  `${baseUrl}earningsPerMonth`;
+export const URL_GET_EARNINGS_PER_MONTH =  `${baseUrl}/earningsPerMonth`;
 
 //END EARNINGS
