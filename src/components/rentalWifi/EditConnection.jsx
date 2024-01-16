@@ -27,7 +27,7 @@ const EditConnection = ({theConnection}) =>{
     const idProduct = theConnection.id;
 
     const [enDateRentalWifi, SetEnDateRentalWifi] = useState(theConnection.enDateRentalWifi);
-    const URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+    const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
 
     console.log("-====---- THE CONNECTION -====----", theConnection);
     const handleSubmit = (id) => {

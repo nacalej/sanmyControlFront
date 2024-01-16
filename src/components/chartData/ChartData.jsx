@@ -18,7 +18,7 @@ export default function ChartData() {
     const [rentals, setRentals] = useState([]);
    
     const reqApi = async() => {
-      await axios.get(`${URL}/chartData`)
+      await axios.get('https://sanmycontrol.alwaysdata.net/chartData')
       .then(response => {
         let res = response.data;        
           setRentals(res);

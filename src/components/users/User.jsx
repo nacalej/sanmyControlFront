@@ -40,7 +40,7 @@ const User = ({ item }) => {
       window.location.reload();
     });
   };
-  const URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
+  const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
 
   const handleDelete = () => {
     const urlDelete = `${URL_DELETE_USER}/${item.id}`;
