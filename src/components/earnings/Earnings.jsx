@@ -9,7 +9,8 @@ import Pagination from '../pagination/Pagination';
 import '../styles/rentaList.css';
 import { Button } from "react-bootstrap";
 import CustomPagination from "../pagination/CustomPagination";
-
+import '../styles/spinner.css';
+import Spinner from 'react-bootstrap/Spinner';
 
    
  function Earnings() {
@@ -51,6 +52,7 @@ const totalPagesNum  = Math.ceil(earnings.length / earningsPerPage);
           </div>
     
      </div>  
+     { earnings && earnings.length > 0 ? ( 
       <div className="row w-100" align="center">
           <div className="table-responsive table-sm" size="sm" >
            <table className="table table-striped table-hover text-center table-bordered"
@@ -82,7 +84,15 @@ const totalPagesNum  = Math.ceil(earnings.length / earningsPerPage);
                 
       </div>   
   </div>  
-
+) :
+( <div className="fatherDiv">
+  <div className="chilDiv">
+   <Spinner animation="border" variant="info" className="spinnerReactstrap" /> 
+   
+   </div>
+   </div>
+   )
+}
  </div>  
 </div>    
 );

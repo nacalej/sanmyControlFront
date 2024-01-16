@@ -8,6 +8,9 @@ import {
     } from "../../actions";
 import User from './User';
 import AddUser from './AddUser';
+import '../styles/spinner.css';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 const Users = () => {
     const dispatch = useDispatch();  
@@ -132,10 +135,13 @@ const Users = () => {
           </div>              
             </div>
     
+            { allUsers && allUsers.length > 0 ? (
         <Alert show={showAlert} variant="success">
             ¡Lista de red actualizada!
         </Alert>
+            ) : (<div className='d-none'></div>)}
         <div className="row w-100" align="center">
+        { allUsers && allUsers.length > 0 ? ( 
           <div className="table-responsive " size="lg">
           {results && resultsMac?.length > 0 ? (
               <table className="table table-striped table-hover text-center table-bordered"
@@ -179,6 +185,15 @@ const Users = () => {
             " "
           )}
           </div>
+          ) :
+( <div className="fatherDiv">
+  <div className="chilDiv">
+   <Spinner animation="border" variant="secondary" className="spinnerReactstrap" /> 
+   
+   </div>
+   </div>
+   )
+}
           </div>
     
         <Modal show={show} onHide={handleClose}>
