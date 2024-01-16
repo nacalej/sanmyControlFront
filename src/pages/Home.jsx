@@ -4,7 +4,8 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 
 // import ChartData from '../components/ChartData';
 import '../components/styles/home.css';
-
+import '../components/styles/spinner.css';
+import Spinner from 'react-bootstrap/Spinner';
 // import {posts} from "../data";
 import { getEarningsByMonth,
 
@@ -29,7 +30,7 @@ const Home = () => {
   const { earningsByMonth, 
     earningsWifiPerDay   } = useSelector((state) => state);
  console.log("Earnings by month: ", earningsByMonth);
- console.log("TYPE OF ---- Earnings by month: ", typeof(earningsByMonth));
+ 
  let cleanedValueEarningsByMonth = Number(earningsByMonth).toFixed(2);
 
 //   console.log("-- Status earnings: ", statusEarnings);
@@ -41,7 +42,9 @@ const Home = () => {
  
 
     return (
+        
     <div className="container mt-3 mb-3">
+        { cleanedValueEarningsByMonth.length > 0 && earningsWifiPerDay.length > 0 ? (
         <div className="row">
       
             {/* WIFI PER DAY */}
@@ -87,7 +90,7 @@ const Home = () => {
                 <div className="mt-4">
                     <h4 className="heading text-center">
                     {cleanedValueEarningsByMonth && 
-                    cleanedValueEarningsByMonth === null ||  cleanedValueEarningsByMonth ==! Number ? 
+                    cleanedValueEarningsByMonth === null ? 
                     'No hay datos.' : 
                     cleanedValueEarningsByMonth &&
                     cleanedValueEarningsByMonth ? 
@@ -114,14 +117,24 @@ const Home = () => {
         
 
 
-
+        ) :
+        ( <div className="fatherDiv">
+          <div className="chilDiv">
+           <Spinner animation="border" variant="dark" className="spinnerReactstrap" /> 
+           
+           </div>
+           </div>
+           )
+        }  
+                { cleanedValueEarningsByMonth.length > 0 && earningsWifiPerDay.length > 0 ? ( 
         <div className="row">
             <div className='col-sm-5'>
         <div className="card p-2 mb-2 shadow p-2 mb-2 bg-light rounded">
             <h5> Alquiler de red</h5>
         <ChartData />
         </div></div>
-        </div>      
+        </div>   
+                ): (<div className='d-none'> </div> )}
         </div>
 
 
