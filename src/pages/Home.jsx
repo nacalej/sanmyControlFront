@@ -44,7 +44,7 @@ const Home = () => {
     return (
         
     <div className="container mt-3 mb-3">
-        { cleanedValueEarningsByMonth?.length > 0 && earningsWifiPerDay.length > 0 ? (
+        {/* { cleanedValueEarningsByMonth?.length > 0 && earningsWifiPerDay.length > 0 ? ( */}
         <div className="row">
       
             {/* WIFI PER DAY */}
@@ -115,7 +115,7 @@ const Home = () => {
         
         </div>
         
-
+{/* 
 
         ) :
         ( <div className="fatherDiv">
@@ -125,8 +125,8 @@ const Home = () => {
            </div>
            </div>
            )
-        }  
-                { cleanedValueEarningsByMonth?.length > 0 && earningsWifiPerDay.length > 0 ? ( 
+        }   */}
+                {/* { cleanedValueEarningsByMonth?.length > 0 && earningsWifiPerDay.length > 0 ? (  */}
         <div className="row">
             <div className='col-sm-5'>
         <div className="card p-2 mb-2 shadow p-2 mb-2 bg-light rounded">
@@ -134,7 +134,7 @@ const Home = () => {
         <ChartData />
         </div></div>
         </div>   
-                ): (<div className='d-none'> </div> )}
+                {/* // ): (<div className='d-none'> </div> )} */}
         </div>
 
 
