@@ -43,6 +43,12 @@ const AddConnection = () => {
       else if(data.typeOfPay === ""){
         errors.typeOfPay = "Ingresa un valor.";
       }
+
+      if(data.dateRentalWifi === ""){
+        errors.dateRentalWifi = "Ingresa un valor.";
+    }
+
+
       if(data.enDateRentalWifi === ""){
         errors.enDateRentalWifi = "Ingresa un valor.";
     }
@@ -125,6 +131,17 @@ const AddConnection = () => {
                 {errors.time}</p> 
               : null
               }
+            </Form.Group>
+            <Form.Group className="mb-2">
+            <Form.Label><strong>Conexión</strong></Form.Label>
+                <Form.Control
+                    type='datetime-local'
+                    
+                    rows={3}
+                    name="dateRentalWifi"
+                    onChange={(e)=> handleChangeInputs(e)}
+                    required
+                />
             </Form.Group>
             
             <Form.Group className="mb-2">
