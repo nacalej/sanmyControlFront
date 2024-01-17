@@ -48,7 +48,7 @@ const Home = () => {
         <div className="row">
       
             {/* WIFI PER DAY */}
-            {/* <div className="col-md-4">
+            <div className="col-md-4">
             <div className="card  p-4 mb-2 shadow p-3 mb-5 bg-light rounded">
                 
                 <div className="d-flex justify-content-between" >
@@ -73,7 +73,7 @@ const Home = () => {
 
                 </div>
             </div>
-        </div> */}
+        </div>
 
 
         <div className="col-md-4">
