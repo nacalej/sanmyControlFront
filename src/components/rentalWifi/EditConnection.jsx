@@ -34,6 +34,7 @@ const EditConnection = ({theConnection}) =>{
         id = idProduct;
         console.log(id);
         const urlPut = `${URL_UPDATE_RENTAL_WIFI_BY_ID}/${id}`;
+        console.log("UPDATED DATE===== ");
         const connectionToUpdate = {enDateRentalWifi}
       
         axios
@@ -121,7 +122,6 @@ const EditConnection = ({theConnection}) =>{
                     rows={3}
                     name="enDateRentalWifi"
                     value={enDateRentalWifi}
-                    defaultValue={theConnection.enDateRentalWifi}
                     onChange={(e)=> SetEnDateRentalWifi(e.target.value)}
                     required
                 />
