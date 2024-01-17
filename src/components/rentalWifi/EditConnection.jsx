@@ -33,8 +33,7 @@ const EditConnection = ({theConnection}) =>{
     const handleSubmit = (id) => {
         id = idProduct;
         console.log(id);
-        const urlPut = `${URL}/${id}`;
-        // const urlPut = `${URL_UPDATE_RENTAL_WIFI_BY_ID}/${id}`;
+        const urlPut = `${URL_UPDATE_RENTAL_WIFI_BY_ID}/${id}`;
         const connectionToUpdate = {enDateRentalWifi}
       
         axios
