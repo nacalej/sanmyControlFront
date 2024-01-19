@@ -142,7 +142,7 @@ const Users = () => {
         <div className="row w-100" align="center">
         { allUsers && allUsers.length > 0 ? ( 
           <div className="table-responsive " size="lg">
-          {results && resultsMac?.length > 0 ? (
+          {results?.length > 0 && resultsMac?.length > 0 ? (
               <table className="table table-striped table-hover text-center table-bordered"
               style={{border: "2px solid #393E46"}}>
     
