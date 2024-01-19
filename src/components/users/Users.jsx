@@ -22,13 +22,13 @@ const Users = () => {
 
        //función de búsqueda
   const searcher = (e) => {
-    console.log(e)
+    // console.log(e)
     setName(e.target.value)   
 };
 
        //función de búsqueda
        const searcherMac= (e) => {
-        console.log("Searcher MAC ==-=----",e);
+        // console.log("Searcher MAC ==-=----",e);
         setMac(e.target.value)   
     }
    
