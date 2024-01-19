@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import '../styles/navBar.css';
-import logo from '../img/sanmy.png';
+import logo from '../../img/sanmy.png';
 
 import { Nav, Navbar} from 'react-bootstrap'
 
