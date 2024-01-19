@@ -50,7 +50,7 @@ export default function ChartData() {
     const data = {
       labels: newKeysArray?.map(x => x),
       datasets: [{
-        label: `Total por mes`,
+        label: `Total por mes (Bs.)`,
         data: newArray,
         backgroundColor: [
           'rgba(76,217, 239, 1)',
