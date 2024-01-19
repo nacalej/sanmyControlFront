@@ -61,7 +61,7 @@ const EditUser = ({ theUser }) => {
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-2">
         <Form.Label>Nombre</Form.Label>
-        <Form.Control type="text" value={name} defaultValue={theUser.name}  onChange={(e) => setName(e.target.value)}  />
+        <Form.Control type="text" name="name" value={name} defaultValue={theUser.name}  onChange={(e) => setName(e.target.value)}  />
       </Form.Group>
 
       <Form.Group className="mb-2">
@@ -69,6 +69,7 @@ const EditUser = ({ theUser }) => {
         <Form.Control
           type="text"
           rows={3}
+          name="lastName"
           value={lastName}
           defaultValue={theUser.lastName}
           onChange={(e) => setLastName(e.target.value)}
@@ -80,6 +81,7 @@ const EditUser = ({ theUser }) => {
         <Form.Control
           type="text"
           rows={3}
+          name="macAddress"
           value={macAddress}
           defaultValue={theUser.macAddress}
           onChange={(e) => setMacAddress(e.target.value)}
