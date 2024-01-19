@@ -174,7 +174,7 @@ const Users = () => {
           <h4 style={{ color: "#EF4C76" }}> No hay registros.</h4>{" "}
         </div>
       )}
-       {results && results.length > 0 ? (
+       {resRes && resRes.length > 0 ? (
 
         <Pagination pages = {totalPagesNum}
           setCurrentPage={setCurrentPage}
