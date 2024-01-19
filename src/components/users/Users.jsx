@@ -124,13 +124,13 @@ const Users = () => {
  
     </Form>
              </div>
-          <div className="col-sm-3 offset-sm-1  mt-5 mb-4 text-gred">
+          <div className="col-sm-3 offset-sm-1  mt-5 mb-4 text-gred d-flex">
         
                 <Button 
                 style={{backgroundColor: "#748DA6", border: "1px solid #748DA6"}} 
                 onClick={handleShow} data-toggle="modal">
                 <i className="material-icons">&#xE147;</i>
-              Agregar nuevo
+              Agregar usuario
             </Button>
           </div>              
             </div>
