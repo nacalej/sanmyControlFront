@@ -23,7 +23,7 @@ const NavBar = () => {
              <Nav.Link as={Link} to="/users">Usuarios</Nav.Link> 
              <Nav.Link as={Link} to="/rentalWifi">Red</Nav.Link> 
              <Nav.Link as={Link} to="/earnings">Ingresos diarios</Nav.Link> 
-             <Nav.Link as={Link} to="/earningsPerMonth">Ganancias por mes</Nav.Link> 
+             <Nav.Link as={Link} to="/earningsPerMonth">Ganancias por meses</Nav.Link> 
       
              
         </Nav>
