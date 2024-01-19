@@ -69,8 +69,8 @@ const WifiRentals = () => {
                 <Button 
                 style={{backgroundColor: "#748DA6", border: "1px solid #748DA6"}} 
                 onClick={handleShow} data-toggle="modal">
-                 <i className="material-icons">&#xE147;</i>
-              Agregar nuevo
+                 
+              Agregar alquiler
             </Button>
           </div>              
             </div>
