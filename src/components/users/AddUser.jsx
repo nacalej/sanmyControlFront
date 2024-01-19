@@ -28,13 +28,10 @@ const AddUser = () => {
           errors.name = "Ingresa un valor.";
       }
   
-         ///// BEGIN OF VALIDATION OF AMOUNT INPUT
-      else if(data.lastName === ""){
-          errors.lastName = "Ingresa un valor.";
-      }
+   
 
       if(allUsers.find((user) => user.name.toLowerCase() === data.name.toLowerCase())){
-        console.log("Validación", allUsers);
+        // console.log("Validación", allUsers);
             errors.name = `Lo siento, el nombre: ${data.name} ya se encuentra registrado.`;      
    }
      
@@ -147,12 +144,7 @@ const AddUser = () => {
                     onChange={(e) => handleChangeInputs(e)} 
                     required
                 />
-                     {errors.lastName  && errors.lastName 
-              ?
-               <p className="error">
-                {errors.lastName}</p> 
-              : null
-              }
+           
             </Form.Group>
             <Button disabled={data.name.length === 0 ||
             data.lastName.length === 0 ||

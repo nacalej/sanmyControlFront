@@ -83,7 +83,7 @@ const Users = () => {
         <Form.Control
             size="sm"
             type="text"
-            placeholder="Nombre *"
+            placeholder="Nombre "
             name="name"
             value={name}
             onChange={(e) => searcher(e)}
@@ -112,7 +112,7 @@ const Users = () => {
         <Form.Control
             size="sm"
             type="text"
-            placeholder="Dirección MAC *"
+            placeholder="Dirección MAC "
             name="mac"
             value={mac}
             onChange={(e) => searcherMac(e)}
