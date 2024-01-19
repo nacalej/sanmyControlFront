@@ -147,7 +147,7 @@ const AddUser = () => {
            
             </Form.Group>
             <Button disabled={data.name.length === 0 ||
-            data.lastName.length === 0 ||
+      
             data.macAddress.length === 0 } variant="success" type="submit" className="mt-2"  onClick={handleSubmit}>
                 Agregar 
             </Button>

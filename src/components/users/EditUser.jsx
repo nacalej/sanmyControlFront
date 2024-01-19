@@ -19,7 +19,7 @@ const EditUser = ({ theUser }) => {
     });
   };
 
-  const idProduct = theUser.id;
+  const idUser = theUser.id;
   const [name, setName] = useState(
     theUser.name
   );
@@ -34,7 +34,8 @@ const EditUser = ({ theUser }) => {
   // const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
 
   const handleSubmit = (id) => {
-    id = idProduct;
+    id = idUser;
+    console.log(id);  
     const urlPut = `${URL_UPDATE_USER}/${id}`;
     const connectionToUpdate = { name, lastName, macAddress };
 

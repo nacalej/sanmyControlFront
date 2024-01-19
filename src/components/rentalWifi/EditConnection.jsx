@@ -28,7 +28,7 @@ const EditConnection = ({theConnection}) =>{
         id = idProduct;
         // console.log(id);
         const urlPut = `${URL_UPDATE_RENTAL_WIFI_BY_ID}/${id}`;
-        console.log("UPDATED DATE===== ");
+        // console.log("UPDATED DATE===== ");
         const connectionToUpdate = {enDateRentalWifi}
       
         axios
