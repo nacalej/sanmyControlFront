@@ -28,7 +28,7 @@ const Home = () => {
     return (
         
     <div className="container mt-3 mb-3">
-        { cleanedValueEarningsByMonth?.length > 0 ? (
+        { earningsByMonth?.length > 0 ? (
         <div className="row">
       
             {/* WIFI PER DAY */}
@@ -110,7 +110,7 @@ const Home = () => {
            </div>
            )
         }   
-        { cleanedValueEarningsByMonth?.length > 0  ? (  
+        { earningsByMonth?.length > 0  ? (  
         <div className="row">
             <div className='col-sm-5'>
         <div className="card p-2 mb-2 shadow p-2 mb-2 bg-light rounded">

@@ -10,9 +10,11 @@ const NavBar = () => {
 
      <Navbar bg="dark" variant="dark"
         sticky="top" expand="sm" collapseOnSelect>
-        <Navbar.Brand>
+        <Navbar.Brand href="/">
           <img src={logo} width="50px" height="50px" alt="Sanmy Control"/>{' '}
-          
+          <span className="brand-text"> 
+                    Sanmy Control 
+          </span> 
         </Navbar.Brand>
 
         <Navbar.Toggle className="coloring" />
