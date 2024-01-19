@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Form, Button, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { URL_UPDATE_USER } from "../../const/constants";
 
 
 const EditUser = ({ theUser }) => {
-  const dispatch = useDispatch();
 
   //Alert
   const showAlert = (message, icon, type) => {
@@ -32,20 +31,19 @@ const EditUser = ({ theUser }) => {
   );
 
 
-  const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
+  // const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
 
   const handleSubmit = (id) => {
     id = idProduct;
-    console.log(id);  
     const urlPut = `${URL_UPDATE_USER}/${id}`;
     const connectionToUpdate = { name, lastName, macAddress };
 
     axios
       .put(urlPut, connectionToUpdate)
       .then((response) => {
-        console.log("Response: ", response);
+        // console.log("Response: ", response);
         const result = response.data;
-        console.log("Results", result);
+        // console.log("Results", result);
         if (response.status === 200) {
           console.log("Éxitooo!");
           showAlert("¡Registro actualizado!", "success", "success");

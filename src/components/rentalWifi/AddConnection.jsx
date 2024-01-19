@@ -62,7 +62,6 @@ const AddConnection = () => {
   
   }//close validateForm
   
-    const [success, setSuccess] = useState(null);
    
 
     function handleChangeInputs(e) {
@@ -73,7 +72,6 @@ const AddConnection = () => {
            [e.target.name] : e.target.value
        });
 
-    console.log("CreateProduct, Input change: ", data);
     setErrors(validateForm({
       ...data,                        
       [e.target.name] : e.target.value

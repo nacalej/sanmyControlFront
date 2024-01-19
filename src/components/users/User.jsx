@@ -1,8 +1,7 @@
-import { useContext, useState, useEffect } from "react";
-import { Modal, Button, OverlayTrigger, Tooltip, Image } from "react-bootstrap";
+import {  useState, useEffect } from "react";
+import { Modal, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import EditUser from "./EditUser";
-// import EditProduct from './EditProduct';
-// import EditForm from './EditForm'
+
 import axios from "axios";
 import Swal from "sweetalert2";
 import { URL_DELETE_USER } from "../../const/constants";
@@ -40,11 +39,11 @@ const User = ({ item }) => {
       window.location.reload();
     });
   };
-  const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
+  // const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
 
   const handleDelete = () => {
     const urlDelete = `${URL_DELETE_USER}/${item.id}`;
-    console.log("ID: ", item.id);
+    // console.log("ID: ", item.id);
     axios
       .delete(urlDelete)
       .then((response) => {
@@ -52,7 +51,7 @@ const User = ({ item }) => {
         const { status, message } = result;
         if (status !== "SUCCESS") {
           //   icon, message, type, text
-          console.log("Éxitooo al borrraaaarrrr!");
+          // console.log("Éxitooo al borrraaaarrrr!");
           showAlert("success", "¡Registro eliminado!", "success");
         } else {
           console.log("Éxitooo al borrraaaarrrr!");

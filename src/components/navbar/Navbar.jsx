@@ -1,26 +1,17 @@
-import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
-
 import '../styles/navBar.css';
+import logo from '../img/sanmy.png';
 
-
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Nav, Navbar} from 'react-bootstrap'
 
 const NavBar = () => {
 
-
-
-
-
   return (
-  
-    // <header>
-    // <img src={logo} alt="GNSO Arcade" />
+
      <Navbar bg="dark" variant="dark"
         sticky="top" expand="sm" collapseOnSelect>
         <Navbar.Brand>
-          {/* <img src={logo} width="50px" height="50px" />{' '} */}
+          <img src={logo} width="50px" height="50px" alt="Sanmy Control"/>{' '}
           
         </Navbar.Brand>
 

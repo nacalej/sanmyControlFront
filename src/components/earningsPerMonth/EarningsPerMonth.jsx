@@ -1,38 +1,20 @@
-import "bootstrap/dist/css/bootstrap.min.css";
- 
+import "bootstrap/dist/css/bootstrap.min.css"; 
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams, useNavigate } from 'react-router-dom';
 import { getEarningsPerMonth} from "../../actions";
-
-import Pagination from '../pagination/Pagination';
 import '../styles/rentaList.css';
-import { Button } from "react-bootstrap";
-import CustomPagination from "../pagination/CustomPagination";
 import '../styles/spinner.css';
 import Spinner from 'react-bootstrap/Spinner';
 
    
  function EarningsPerMonth() {
   const dispatch = useDispatch();  
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getEarningsPerMonth())
   },[dispatch]);  
 
   const { earningsPerMonth } = useSelector((state) => state);
-  console.log("Earnings per Month ------: ", earningsPerMonth);
-
-  
-    //Pagination
-    const [currentPage, setCurrentPage] = useState(1);
-    const [earningsPerPage] = useState(10);
-
-// const indexOfLastEarning = currentPage * earningsPerPage;
-// const indexOfFirstEarning = indexOfLastEarning - earningsPerPage;
-// const currentProfits = earnings.length > 0 ? earnings.slice(indexOfFirstEarning, indexOfLastEarning) : earnings;
-// const totalPagesNum  = Math.ceil(earnings.length / earningsPerPage);
 
 
   return (
@@ -168,11 +150,6 @@ import Spinner from 'react-bootstrap/Spinner';
 
               </tbody>
           </table>
-          {/* <Pagination  pages = {totalPagesNum}
-                setCurrentPage={setCurrentPage}
-                currentRentals ={currentProfits}
-                allRentals = {earnings}
-                  /> */}
                 
       </div>   
   </div>  

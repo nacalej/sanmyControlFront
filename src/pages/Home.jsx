@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams, useNavigate } from 'react-router-dom';
-
-// import ChartData from '../components/ChartData';
+import { Link } from 'react-router-dom';
 import '../components/styles/home.css';
 import '../components/styles/spinner.css';
 import Spinner from 'react-bootstrap/Spinner';
-// import {posts} from "../data";
 import { getEarningsByMonth,
-
-    getEarningsWifiPerDay,
-   
+    getEarningsWifiPerDay,   
 } from "../actions";
 import ChartData from '../components/chartData/ChartData';
 
@@ -19,32 +14,21 @@ const Home = () => {
 
   useEffect(() => {
      dispatch(getEarningsByMonth())
-    // dispatch(getStatusEarnings())
-    // dispatch(getEarningsPerDay())
     dispatch(getEarningsWifiPerDay())
-    // dispatch(getRevenueLastMonth())
-    // dispatch(getMostRentedMachine())
-    // dispatch(getValueDollar())
   },[dispatch]);  
 
   const { earningsByMonth, 
     earningsWifiPerDay   } = useSelector((state) => state);
- console.log("Earnings by month: ", earningsByMonth);
  
  let cleanedValueEarningsByMonth = Number(earningsByMonth).toFixed(2);
 
-//   console.log("-- Status earnings: ", statusEarnings);
-//   console.log("-- REVENUE ---: ", revenueLastMonth);
-//   console.log("-- MOST RENTED ---: ", mostRented);
-//   console.log("-- VALUE DOLLAR ---: ", valueDollar);
-//   console.log("-- EARNINGS PER DAY ---: ", earningsPerDay);
-//   console.log("-- EARNINGS WIFI PER DAY ---: ", earningsWifiPerDay);  
+
  
 
     return (
         
     <div className="container mt-3 mb-3">
-        {/* { cleanedValueEarningsByMonth?.length > 0 && earningsWifiPerDay.length > 0 ? ( */}
+        { cleanedValueEarningsByMonth?.length > 0 ? (
         <div className="row">
       
             {/* WIFI PER DAY */}
@@ -115,7 +99,7 @@ const Home = () => {
         
         </div>
         
-{/* 
+ 
 
         ) :
         ( <div className="fatherDiv">
@@ -125,16 +109,16 @@ const Home = () => {
            </div>
            </div>
            )
-        }   */}
-                {/* { cleanedValueEarningsByMonth?.length > 0 && earningsWifiPerDay.length > 0 ? (  */}
+        }   
+        { cleanedValueEarningsByMonth?.length > 0  ? (  
         <div className="row">
             <div className='col-sm-5'>
         <div className="card p-2 mb-2 shadow p-2 mb-2 bg-light rounded">
-            <h5> Alquiler de red</h5>
+            <h5> Alquiler de red por meses</h5>
         <ChartData />
         </div></div>
         </div>   
-                {/* // ): (<div className='d-none'> </div> )} */}
+            ): (<div className='d-none'> </div> )} 
         </div>
 
 

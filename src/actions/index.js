@@ -1,5 +1,4 @@
 import axios from "axios";
-import Swal from "sweetalert2";
 
 
 import {
@@ -22,7 +21,6 @@ import {
 } from "./const";
 import { URL_ADD_RENTAL_WIFI, URL_ADD_USER, URL_GET_ALL_RENTALS_WIFI, URL_GET_ALL_USERS, URL_GET_COUNT_RENTALS, URL_GET_EARNINGS, URL_GET_EARNINGS_BY_MONTH, URL_GET_EARNINGS_PER_MONTH, URL_GET_EARNINGS_WIFI_PER_DAY } from "../const/constants";
 
-// const URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3001';
 // const URL = process.env.REACT_APP_BACKEND_URL || 'sanmycontrol.alwaysdata.net';
 //Actions:
 
@@ -81,7 +79,7 @@ export const getEarningsByMonth = () => {
 };
 
 export const getEarningsPerMonth = () => {
-  console.log("Payload in action getEarningsPerSelectedMonth: ");
+  console.log("Payload in action getEarningsPerMonth: ");
   return async (dispatch) => {
     await axios
       .get(URL_GET_EARNINGS_PER_MONTH)

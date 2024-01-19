@@ -1,32 +1,17 @@
-import {GET_MACHINES, 
-    GET_MACHINE_BY_ID, 
-    GET_RENTALS, 
-    GET_RENTAL_BY_ID, 
-    POST_MACHINE, 
-    POST_RENTAL,
+import {
     UPDATE_RENTAL,
     GET_EARNINGS_BY_MONTH,
     GET_EARNINGS,
     GET_STATUS_EARNINGS,
-    GET_MOVEMENTS,
-    POST_MOVEMENT,
-    GET_MOVEMENT_BY_ID,
     GET_COUNT_RENTALS,
     GET_REVENUE_LAST_MONTH,
-    MOST_RENTED_MACHINE,
-    GET_VALUE_DOLLAR,
     GET_EARNINGS_PER_DAY,
     GET_RENTAL_WIFI, 
     GET_RENTALWIFI_BY_ID,
     POST_RENTAL_WIFI,
-    GET_CLIENTS,
-    GET_CLIENT_BY_ID,
-    POST_CLIENT,
     GET_EARNINGS_WIFI_PER_DAY,
-    GET_EARNINGS_PER_SELECTED_MONTH,
     GET_EARNINGS_PER_CASH_PAYMENTS,
     GET_EARNINGS_PER_MOBILE_PAYMENTS,
-    GET_ALL_INCOME_MOVEMENTS,
      /*USERS*/
   GET_USERS,
   GET_USER_BY_NAME,
@@ -36,29 +21,18 @@ import {GET_MACHINES,
 
 //state initial:
 const initialState = {
-    allMachines: [],
-    backUpPokes: [],
     allRentals: [],
     types: [],
     details: [],
-    detailsMachines: [],
     earnings: [],
     earningsByMonth: [],
     earningsPerMonth: [],
-    earningsPerCashPayments: [],
-    earningsPerMobilePayments: [],
     statusEarnings: [],
-    movements: [],
-    detailsMovement: [],
     chartData: [],
-    revenueLastMonth: [],
-    mostRented: [],
-    valueDollar: [],
     earningsPerDay: [],
     allRentalWifi: [],
     detailRentalWifi: [],
     earningsWifiPerDay: [],
-    allIncomeMovements: [],
      /*USERS*/
      users: [],
     allUsers: []
@@ -75,48 +49,29 @@ export default function rootReducer(state = initialState, { type, payload }){
                 return {
                     ...state,
                     earnings: payload,
-                    // backUpPokes: payload               
                 }; 
 
                 case GET_EARNINGS_BY_MONTH:
                     return {
                         ...state,
                         earningsByMonth: payload,
-                        // backUpPokes: payload               
                     }; 
-                    case GET_STATUS_EARNINGS:
-                        return {
-                            ...state,
-                            statusEarnings: payload,
-                            // backUpPokes: payload               
-                    };
+                    // case GET_STATUS_EARNINGS:
+                    //     return {
+                    //         ...state,
+                    //         statusEarnings: payload,
+                    // };
                 case GET_EARNINGS_PER_MONTH:
                     return {
                         ...state,
                         earningsPerMonth: payload
                     };
-                
-                    case GET_EARNINGS_PER_CASH_PAYMENTS:
-                        return {
-                            ...state,
-                            earningsPerCashPayments: payload
-                        };
-                    case GET_EARNINGS_PER_MOBILE_PAYMENTS:
-                            return {
-                                ...state,
-                                earningsPerMobilePayments: payload
-                     };
-                     
-                case GET_REVENUE_LAST_MONTH:
-                    return {
-                        ...state,
-                        revenueLastMonth: payload
-                    }
-                case GET_EARNINGS_PER_DAY:
-                    return {
-                        ...state,
-                        earningsPerDay: payload
-                    }
+             
+                // case GET_EARNINGS_PER_DAY:
+                //     return {
+                //         ...state,
+                //         earningsPerDay: payload
+                //     }
                 case GET_EARNINGS_WIFI_PER_DAY:
                     return{
                         ...state,
@@ -128,8 +83,7 @@ export default function rootReducer(state = initialState, { type, payload }){
                     return{
                         ...state,
                         allRentalWifi: payload
-                    }
-            
+                    }            
               
 
                 case GET_RENTALWIFI_BY_ID:

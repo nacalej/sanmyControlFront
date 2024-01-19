@@ -1,17 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import { Form, Button, Row } from "react-bootstrap";
+import React, {useState} from 'react';
+import { Form, Button } from "react-bootstrap";
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { addProduct } from '../../actions';
 import Swal from "sweetalert2";
 import { URL_UPDATE_RENTAL_WIFI_BY_ID } from '../../const/constants';
 
-// import {EmployeeContext} from '../contexts/EmployeeContext';
-// import {useContext, useState} from 'react';
 
 const EditConnection = ({theConnection}) =>{
-    const dispatch = useDispatch();
-    //const { categories } = useSelector((state) => state);
 
        //Alert 
    const showAlert = (message, icon, type) => {
@@ -27,12 +21,12 @@ const EditConnection = ({theConnection}) =>{
     const idProduct = theConnection.id;
 
     const [enDateRentalWifi, SetEnDateRentalWifi] = useState(theConnection.enDateRentalWifi);
-    const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
+    // const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
 
-    console.log("-====---- THE CONNECTION -====----", theConnection);
+    // console.log("-====---- THE CONNECTION -====----", theConnection);
     const handleSubmit = (id) => {
         id = idProduct;
-        console.log(id);
+        // console.log(id);
         const urlPut = `${URL_UPDATE_RENTAL_WIFI_BY_ID}/${id}`;
         console.log("UPDATED DATE===== ");
         const connectionToUpdate = {enDateRentalWifi}
@@ -40,9 +34,9 @@ const EditConnection = ({theConnection}) =>{
         axios
           .put(urlPut, connectionToUpdate )
           .then((response) => {
-            console.log("Response: ", response);
+            // console.log("Response: ", response);
             const result = response.data;
-            console.log("Results",result)
+            // console.log("Results",result)
             if (response.status === 200) {
               console.log("Éxitooo!");
               showAlert("¡Registro actualizado!", "success", "success")

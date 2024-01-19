@@ -1,38 +1,22 @@
 import React from 'react'
-  import { Modal, Button, Alert} from 'react-bootstrap';
-    import { useEffect, useState } from 'react';
-    import { useDispatch, useSelector } from "react-redux";
-
-    // import Employee from './Employee';
-    // import AddForm from './AddForm';
-    import Pagination from '../pagination/Pagination';
-    import {
+import { Modal, Button, Alert} from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import Pagination from '../pagination/Pagination';
+import {
         getAllRentalsWifi,
         getRentalWifiById,
         postRentalWifi,
-      } from "../../actions";
+} from "../../actions";
 import WifiRental from './WifiRental';
 import AddConnection from './AddConnection';
-// import Product from './Product';
-// import AddProducts from './AddProducts';
 import '../styles/spinner.css';
 import Spinner from 'react-bootstrap/Spinner';
 
 
 const WifiRentals = () => {
-    const dispatch = useDispatch();
-
-    //const [ products, setProducts ] = useState([]);
-  
-  
-
-  
-    const { allRentalWifi, detailRentalWifi } = useSelector((state) => state);
-    console.log("PRODUCT IN PRODUCTSCRUD: ", allRentalWifi);
-
-  
-    
-    
+    const dispatch = useDispatch();  
+    const { allRentalWifi } = useSelector((state) => state);
     
         const [showAlert, setShowAlert] = useState(false);
     
@@ -40,7 +24,6 @@ const WifiRentals = () => {
         
         const handleShow = () => setShow(true);
         const handleClose = () => setShow(false);
-        //const handleShowAlert = () =>setShowAlert(true);
     
       
         const handleShowAlert = () => {
@@ -68,7 +51,7 @@ const WifiRentals = () => {
       ? allRentalWifi.slice(indexOfFirstRentalWifi, indexOfLastRentalWifi)
       : allRentalWifi;
   const totalPagesNum = Math.ceil(allRentalWifi.length / rentalWifiPerPage);
-    console.log("CURRENT --------", currentRentalsWifi);
+    // console.log("CURRENT --------", currentRentalsWifi);
         return (
          <div className="container min-vh-100  ">
       <div className="crud shadow-lg p-4 mb-5 mt-5  rounded" style={{ backgroundColor: "#EFFFFB"}}>
@@ -86,7 +69,7 @@ const WifiRentals = () => {
                 <Button 
                 style={{backgroundColor: "#748DA6", border: "1px solid #748DA6"}} 
                 onClick={handleShow} data-toggle="modal">
-                    {/* <i className="material-icons">&#xE147;</i> */}
+                 <i className="material-icons">&#xE147;</i>
               Agregar nuevo
             </Button>
           </div>              

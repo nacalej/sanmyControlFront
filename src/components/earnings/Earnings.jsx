@@ -1,28 +1,22 @@
-import "bootstrap/dist/css/bootstrap.min.css";
- 
+import "bootstrap/dist/css/bootstrap.min.css"; 
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams, useNavigate } from 'react-router-dom';
 import { getEarnings} from "../../actions";
 
 import Pagination from '../pagination/Pagination';
 import '../styles/rentaList.css';
-import { Button } from "react-bootstrap";
-import CustomPagination from "../pagination/CustomPagination";
 import '../styles/spinner.css';
 import Spinner from 'react-bootstrap/Spinner';
 
    
  function Earnings() {
   const dispatch = useDispatch();  
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getEarnings())
   },[dispatch]);  
 
   const { earnings } = useSelector((state) => state);
-  console.log("Earnings: ", earnings);
 
   
     //Pagination

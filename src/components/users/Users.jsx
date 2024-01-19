@@ -70,7 +70,7 @@ const Users = () => {
   const resultsMac = !mac ? allUsers : allUsers.filter((dato)=> dato.macAddress.includes(mac.toUpperCase()))
   const totalPagesNum = results ? Math.ceil(results.length / usersPerPage) : Math.ceil(resultsMac.length / usersPerPage);
   const resRes = name ? results : resultsMac;
-    console.log("CURRENT USERS --------", currentUsers);
+    // console.log("CURRENT USERS --------", currentUsers);
         return (
          <div className="container min-vh-100  ">
           
@@ -129,7 +129,7 @@ const Users = () => {
                 <Button 
                 style={{backgroundColor: "#748DA6", border: "1px solid #748DA6"}} 
                 onClick={handleShow} data-toggle="modal">
-                    {/* <i className="material-icons">&#xE147;</i> */}
+                <i className="material-icons">&#xE147;</i>
               Agregar nuevo
             </Button>
           </div>              

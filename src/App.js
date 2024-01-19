@@ -2,9 +2,8 @@ import NavBar from "./components/navbar/Navbar";
 import "./App.css";
 import Home from "./pages/Home.jsx";
 import Footer from "./components/footer/Footer.jsx"
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 import WifiRentals from "./components/rentalWifi/WifiRentals";
 import Users from "./components/users/Users.jsx";
@@ -17,7 +16,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <div  className="" style={{backgroundColor: "#748DA6"}}>
-        {/* <Navbar user={user} /> */}
         <NavBar  />
 
         <Routes>

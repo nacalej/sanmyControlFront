@@ -2,30 +2,22 @@
     min-height: 100vh;
 }
 .cardSty{
-        /* background-color: #C3F8FF ; */
         background-color: #d63384ab !important;
-        /* border: none;
-        border-radius: 10px;
-        padding: 3px;
-        box-shadow: 2px 4px 10px 1px rgba(201,201,201, 0.47); */
+    
 }
 .cardSty2{
-    /* background-color: #63c2de !important; */
     background-color: #63c2de8c !important;
   }
 
 .linkToEarnings{
-    /* text-decoration: none; */
-    /* color: #000000; */
-    /* color: #0078AA; */
+
     color: white;
     border-radius: 5px;
     background-color: #2596be;
     padding: 5px;
 }
 .linkToEarnings:hover{
-    /* color: #0077aab0;
- */
+
  background-color: #2595bea4;
  color: white;
 }
@@ -41,7 +33,6 @@
 .icon {
     width: 50px;
     height: 50px;
-    /* background-color: #eee; */
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -51,8 +42,7 @@
 }
 
 .badge span {
-    /* background-color: #fffbec; */
-    /* background-color: #FFE3E1; */
+ 
     background-color: #2596be;
     width: 65px;
     padding: 2px;
@@ -68,8 +58,7 @@
 
 
 .b2 span {
-    /* background-color: #fffbec; */
-    /* background-color: #FFE3E1; */
+
     width: 70px;
     background-color: #eb8c43;
 }
@@ -81,7 +70,6 @@
 }
 
 .b4 span{
-    /* background-color: #26FA43; */
     background-color: #26fa42b7;
     color: black;
 }

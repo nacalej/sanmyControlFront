@@ -14,7 +14,6 @@ const AddUser = () => {
   });
 
   const { allUsers } = useSelector((state) => state);
-console.log(allUsers);
 
 
     const [errors, setErrors] = useState({});
@@ -46,7 +45,6 @@ console.log(allUsers);
       }
 
       if(allUsers.find((user) => user.macAddress == data.macAddress)){
-        console.log("Validación", allUsers);
             errors.macAddress = "Lo siento, la dirección MAC ya se encuentra registrada.";      
    }
 
@@ -57,7 +55,6 @@ console.log(allUsers);
   
   }//close validateForm
   
-    const [success, setSuccess] = useState(null);
    
 
     function handleChangeInputs(e) {
@@ -68,7 +65,6 @@ console.log(allUsers);
            [e.target.name] : e.target.value
        });
 
-    console.log("CreateProduct, Input change: ", data);
     setErrors(validateForm({
       ...data,                        
       [e.target.name] : e.target.value

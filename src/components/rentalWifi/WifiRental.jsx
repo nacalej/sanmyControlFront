@@ -1,8 +1,6 @@
-import {useContext, useState, useEffect} from 'react';
-import { Modal, Button, OverlayTrigger, Tooltip, Image } from 'react-bootstrap';
+import { useState, useEffect} from 'react';
+import { Modal, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import EditConnection from './EditConnection';
-// import EditProduct from './EditProduct';
-// import EditForm from './EditForm'
 import axios from "axios";
 import Swal from "sweetalert2";
 import { URL_DELETE_RENTAL_WIFI_BY_ID } from '../../const/constants';
@@ -44,12 +42,12 @@ const WifiRental = ({item}) => {
 
 
   } 
-  const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
+  // const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
 
 
     const handleDelete = () => {
         const urlDelete = `${URL_DELETE_RENTAL_WIFI_BY_ID}/${item.id}`;
-        console.log("ID: ", item.id);
+        // console.log("ID: ", item.id);
         axios
           .delete(urlDelete)
           .then((response) => {
@@ -57,7 +55,7 @@ const WifiRental = ({item}) => {
             const { status, message } = result;
             if (status !== "SUCCESS") {
               //   alert(message, status)
-              console.log("Éxitooo al borrraaaarrrr!");
+              // console.log("Éxitooo al borrraaaarrrr!");
               showAlert("¡Registro eliminado!");
             } else {
               console.log("Éxitooo al borrraaaarrrr!");
