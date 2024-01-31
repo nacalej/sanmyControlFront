@@ -37,6 +37,7 @@ const EditUser = ({ theUser }) => {
     id = idUser;
     console.log(id);  
     const urlPut = `${URL_UPDATE_USER}/${id}`;
+    console.log("NAME===, MACADDRESS", name);
     const connectionToUpdate = { name, lastName, macAddress };
 
     axios
