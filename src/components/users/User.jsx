@@ -62,7 +62,6 @@ const User = ({ item }) => {
         console.log(err);
       });
   };
-
   return (
     <>
       <td>{item.name}</td>
