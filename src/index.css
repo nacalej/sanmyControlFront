@@ -89,3 +89,41 @@ code {
   padding: 2px 5px;
   background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
 }
+
+.chartCard{
+  width: 100vw;
+  height: calc(100vh-40px);
+  display: flex;
+}
+
+.chartBox{
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 3px #c471f5;
+  background: white;
+}
+
+@media screen and (max-width: 700px) {
+  .chartBox{
+    width: 90%;
+    height: 45%;
+  }  
+}
+
+@media screen and (max-width: 400px) {
+  .chartBox{
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+  }  
+}
+
+@media screen and (max-width: 300px) {
+  .chartBox{
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+  }  
+}

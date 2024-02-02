@@ -53,10 +53,10 @@ export default function ChartData() {
         label: `Total por mes (Bs.)`,
         data: newArray,
         backgroundColor: [
-          'rgba(76,217, 239, 1)',
+          'rgba(213, 184, 255, 1)',
         ],
         borderColor: [
-          'rgba(71, 204, 225, 2)'        
+          'rgba(213, 184, 255, 2)'        
         ],
         borderWidth: 1,
         borderRadius: 4
@@ -75,7 +75,8 @@ export default function ChartData() {
     }
 
     return (
-      <div style={{width: '400px', height: '300px'}}>
+      <div className='chartCard'>
+      <div className='chartBox'>
        { data.labels && data.labels[0] ?
        <Bar
           data={data}
@@ -83,6 +84,7 @@ export default function ChartData() {
           options={options}
   
         /> :  <div style={{display: 'none'}}> </div>}
+      </div>
       </div>
     );
   };

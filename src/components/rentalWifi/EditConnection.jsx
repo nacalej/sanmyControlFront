@@ -85,15 +85,19 @@ const EditConnection = ({theConnection}) =>{
                 </div>
             </Form.Group>
 
-            <Form.Group className="mb-2 bg_input_EndDateRental">
+            <Form.Group className="mb-2 bg_input_EndDateRental" >
             <Form.Label>Fecha de desconexión guardada:</Form.Label>
             <Form.Control
-            className="mb-2"
+            className="mb-2 text-info"
                    type='text'
                     rows={2}                  
                     value={theConnection.enDateRentalWifi}
                    readOnly
                 />
+             </Form.Group>
+
+
+              <Form.Group className="mb-2 " >
                   <Form.Label><strong>Editar fecha de desconexión</strong></Form.Label>
                 <Form.Control
                     type='datetime-local'                    
@@ -105,6 +109,7 @@ const EditConnection = ({theConnection}) =>{
                     required
                 />
             </Form.Group>
+         
          
             <Button variant="success" type="submit" block className='mt-2'>
                 Editar conexión
