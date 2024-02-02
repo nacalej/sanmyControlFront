@@ -1,55 +1,39 @@
 import React, {useState} from 'react';
 import { Form, Button } from "react-bootstrap";
-import axios from 'axios';
 import Swal from "sweetalert2";
-import { URL_UPDATE_RENTAL_WIFI_BY_ID } from '../../const/constants';
+import { useDispatch } from "react-redux";
+import { updateRental } from '../../actions';
 
 
 const EditConnection = ({theConnection}) =>{
+  const dispatch = useDispatch();
+  const idProduct = theConnection.id;
 
-       //Alert 
-   const showAlert = (message, icon, type) => {
-    Swal.fire({
-      title: message,
-      type: type,
-      icon: icon,
-    }).then((result) => {
-      window.location.reload();
+  const [enDateRentalWifi, SetEnDateRentalWifi] = useState(theConnection.enDateRentalWifi);
+  const [input, setInput] = useState({
+    /* input = estado local */
+    enDateRentalWifi: enDateRentalWifi,
+    id: idProduct,
+  });
+  
+   
+  
+  function handleChange(e) {
+    console.log("este es el input", input);
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
     });
-  };
-
-    const idProduct = theConnection.id;
-
-    const [enDateRentalWifi, SetEnDateRentalWifi] = useState(theConnection.enDateRentalWifi);
-    // const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
-
-    // console.log("-====---- THE CONNECTION -====----", theConnection);
-    const handleSubmit = (id) => {
-        id = idProduct;
-        // console.log(id);
-        const urlPut = `${URL_UPDATE_RENTAL_WIFI_BY_ID}/${id}`;
-        // console.log("UPDATED DATE===== ");
-        const connectionToUpdate = {enDateRentalWifi}
-      
-        axios
-          .put(urlPut, connectionToUpdate )
-          .then((response) => {
-            // console.log("Response: ", response);
-            const result = response.data;
-            // console.log("Results",result)
-            if (response.status === 200) {
-              console.log("Éxitooo!");
-              showAlert("¡Registro actualizado!", "success", "success")
-            } else {
-                showAlert("¡No se actualizó!", "error", "error")
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-    
-        
-    }
+  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(updateRental(input));
+    setInput({
+      enDateRentalWifi: "",
+      id: "",
+    });
+}
 
      return (
 
@@ -115,8 +99,9 @@ const EditConnection = ({theConnection}) =>{
                     type='datetime-local'                    
                     rows={3}
                     name="enDateRentalWifi"
-                    value={enDateRentalWifi}
-                    onChange={(e)=> SetEnDateRentalWifi(e.target.value)}
+                    value={input.enDateRentalWifi}
+                    defaultValue={theConnection.enDateRentalWifi}
+                    onChange={(e)=> handleChange(e)}
                     required
                 />
             </Form.Group>

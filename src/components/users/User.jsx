@@ -39,8 +39,8 @@ const User = ({ item }) => {
       window.location.reload();
     });
   };
-  // const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
 
+  
   const handleDelete = () => {
     const urlDelete = `${URL_DELETE_USER}/${item.id}`;
     // console.log("ID: ", item.id);
@@ -49,19 +49,24 @@ const User = ({ item }) => {
       .then((response) => {
         const result = response.data;
         const { status, message } = result;
-        if (status !== "SUCCESS") {
-          //   icon, message, type, text
-          // console.log("Éxitooo al borrraaaarrrr!");
-          showAlert("success", "¡Registro eliminado!", "success");
-        } else {
+        // console.log("======RESPONSE DATA=====",response.data);
+        // console.log("======STATUSSSS=====",response.status);
+       if(response.data == "ER_ROW_IS_REFERENCED_2: Cannot delete or update a parent row: a foreign key constraint fails (`sanmycontrol_sanmycontrol`.`rentalwifi`, CONSTRAINT `rentalwifi_ibfk_1` FOREIGN KEY (`addressUser`) REFERENCES `users` (`macAddress`))"){
+        showAlert("error", "No se pudo eliminar.", "error", "Existe un registro de red, asociado al usuario.");
+
+       }
+    
+         else {
+            showAlert("success", "¡Registro eliminado!", "success");
+
           console.log("Éxitooo al borrraaaarrrr!");
-          showAlert("error", "No se pudo eliminar.", "error", "Elimine el registro de red, asociado al usuario.");
         }
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
   return (
     <>
       <td>{item.name}</td>

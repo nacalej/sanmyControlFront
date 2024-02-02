@@ -1,68 +1,56 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
-import { URL_UPDATE_USER } from "../../const/constants";
+import { updateUser } from "../../actions";
 
 
 const EditUser = ({ theUser }) => {
+  const dispatch = useDispatch();
 
   //Alert
-  const showAlert = (message, icon, type) => {
-    Swal.fire({
-      title: message,
-      type: type,
-      icon: icon,
-    }).then((result) => {
-      window.location.reload();
-    });
-  };
+
 
   const idUser = theUser.id;
-  const [name, setName] = useState(
-    theUser.name
-  );
   const [lastName, setLastName] = useState(
     theUser.lastName
   );
+
   const [macAddress, setMacAddress] = useState(
     theUser.macAddress
   );
+const [input, setInput] = useState({
+  /* input = estado local */
+  lastName: lastName,
+  id: idUser,
+  macAddress: macAddress
+});
 
 
-  // const URL = process.env.REACT_APP_BACKEND_URL || 'https://sanmycontrol.alwaysdata.net';
 
-  const handleSubmit = (id) => {
-    id = idUser;
-    console.log(id);  
-    const urlPut = `${URL_UPDATE_USER}/${id}`;
-    console.log("NAME=== ", name);
-    const connectionToUpdate = { name, lastName, macAddress };
 
-    axios
-      .put(urlPut, connectionToUpdate)
-      .then((response) => {
-        // console.log("Response: ", response);
-        const result = response.data;
-        console.log("Results", result);
-        if (response.status === 200) {
-          console.log("Éxitooo!");
-          showAlert("¡Registro actualizado!", "success", "success");
-        } else {
-          showAlert("¡No se actualizó!", "error", "error");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+function handleChange(e) {
+  // console.log("===== LASTNAME INPUT ==== ", input);
+  setInput({
+    ...input,
+    [e.target.name]: e.target.value,
+  });
+}
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  dispatch(updateUser(input));
+  setInput({
+    lastName: "",
+    id: "",
+  });
+
+};
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-2">
         <Form.Label>Nombre</Form.Label>
-        <Form.Control type="text" name="name" value={name} defaultValue={theUser.name}  onChange={(e) => setName(e.target.value)}  />
+        <Form.Control type="text"  defaultValue={theUser.name} readOnly  />
       </Form.Group>
 
       <Form.Group className="mb-2">
@@ -71,9 +59,9 @@ const EditUser = ({ theUser }) => {
           type="text"
           rows={3}
           name="lastName"
-          value={lastName}
+          value={input.lastName}
           defaultValue={theUser.lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          onChange={(e) => handleChange(e)}
         />
       </Form.Group>
 
@@ -83,9 +71,9 @@ const EditUser = ({ theUser }) => {
           type="text"
           rows={3}
           name="macAddress"
-          value={macAddress}
+          value={input.macAddress}
           defaultValue={theUser.macAddress}
-          onChange={(e) => setMacAddress(e.target.value)}
+          onChange={(e) => handleChange(e)}
         />
       </Form.Group>
 

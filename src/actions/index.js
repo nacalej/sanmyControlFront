@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import Swal from "sweetalert2";
 
 import {
 
@@ -19,9 +19,21 @@ import {
   GET_USER_BY_NAME
   /* END USERS*/
 } from "./const";
-import { URL_ADD_RENTAL_WIFI, URL_ADD_USER, URL_GET_ALL_RENTALS_WIFI, URL_GET_ALL_USERS, URL_GET_COUNT_RENTALS, URL_GET_EARNINGS, URL_GET_EARNINGS_BY_MONTH, URL_GET_EARNINGS_PER_MONTH, URL_GET_EARNINGS_WIFI_PER_DAY } from "../const/constants";
+import { URL_ADD_RENTAL_WIFI, URL_ADD_USER, URL_GET_ALL_RENTALS_WIFI, URL_GET_ALL_USERS, URL_GET_COUNT_RENTALS, URL_GET_EARNINGS, URL_GET_EARNINGS_BY_MONTH, URL_GET_EARNINGS_PER_MONTH, URL_GET_EARNINGS_WIFI_PER_DAY, URL_UPDATE_RENTAL_WIFI_BY_ID, URL_UPDATE_USER } from "../const/constants";
 
-// const URL = process.env.REACT_APP_BACKEND_URL || 'sanmycontrol.alwaysdata.net';
+
+  //Alert
+  const showAlert = (message, icon, type) => {
+    Swal.fire({
+      title: message,
+      type: type,
+      icon: icon,
+    }).then((result) => {
+      window.location.reload();
+    });
+  };
+
+
 //Actions:
 
 export const getEarnings = () => {
@@ -93,6 +105,24 @@ export const getEarningsPerMonth = () => {
         console.log("Detailrental by id, actions ", err);
       });
   };
+};
+
+export function updateRental(payload){
+  console.log("UPDATE RENTAL ACTION -------", payload);
+  let id = payload.id;
+  return async () => {
+      try {
+      let response = await axios.put(`${URL_UPDATE_RENTAL_WIFI_BY_ID}/`+id,
+      payload);
+      // console.log("Response de UPDATE: ", payload);
+      showAlert("¡Registro actualizado!", "success", "success");
+      return response;
+   }catch(error){
+    console.log("Error in action UPDATE RENTAL: ", error);
+      showAlert("¡No se actualizó!", "error", "error");
+      
+   }
+};
 };
 
 export const getCountRentals = () => {
@@ -229,4 +259,23 @@ export function updateProduct(payload) {
     });
   };
 }
+
+export function updateUser(payload){
+  console.log("UPDATE USER ACTION -------", payload);
+  let id = payload.id;
+  return async () => {
+      try {
+      let response = await axios.put(`${URL_UPDATE_USER}/`+id,
+      payload);
+      // console.log("Response de POST: ", payload);
+      // alert("Pokemon created! :)");
+      showAlert("¡Registro actualizado!", "success", "success");
+      return response;
+   }catch(error){
+    console.log("Error in action UPDATE USER: ", error);
+      showAlert("¡No se actualizó!", "error", "error");
+      
+   }
+};
+};
 //////END USERS
