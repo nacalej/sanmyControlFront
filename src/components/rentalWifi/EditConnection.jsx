@@ -85,7 +85,7 @@ const EditConnection = ({theConnection}) =>{
                 </div>
             </Form.Group>
 
-            <Form.Group className="mb-2">
+            <Form.Group className="mb-2 bg_input_EndDateRental">
             <Form.Label>Fecha de desconexión guardada:</Form.Label>
             <Form.Control
             className="mb-2"
